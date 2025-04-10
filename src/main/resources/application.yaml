@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: remitly-task-app
+  datasource:
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    name: ${DB_NAME}
+  data:
+    redis:
+      url: ${REDIS_URL}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cache:
+    cache-names: redis-cache
+    type: redis
+    redis:
+      cache-null-values: false
+      time-to-live: 1m
