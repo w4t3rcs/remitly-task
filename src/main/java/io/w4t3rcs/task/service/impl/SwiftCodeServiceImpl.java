@@ -60,7 +60,7 @@ public class SwiftCodeServiceImpl implements SwiftCodeService {
             saveBranchSwiftCode(swiftCode, codePrefix);
         }
 
-        return new MessageSwiftCodeResponse("Swift code is successfully created");
+        return new MessageSwiftCodeResponse("Swift code is successfully created - " + code);
     }
 
     private void saveHeadquarterSwiftCode(SwiftCode swiftCode, String codePrefix) {
@@ -86,6 +86,6 @@ public class SwiftCodeServiceImpl implements SwiftCodeService {
     @Transactional
     @Caching(evict = @CacheEvict(value = "swiftCodesCache", key = "#code"))
     public MessageSwiftCodeResponse deleteSwiftCode(String code) {
-        return new MessageSwiftCodeResponse("Swift code is successfully deleted");
+        return new MessageSwiftCodeResponse("Swift code is successfully deleted - " + code);
     }
 }

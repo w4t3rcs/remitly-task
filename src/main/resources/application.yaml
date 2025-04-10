@@ -5,6 +5,7 @@ spring:
     username: ${DB_USER}
     password: ${DB_PASSWORD}
     name: ${DB_NAME}
+    url: ${DB_URL}
   data:
     redis:
       url: ${REDIS_URL}

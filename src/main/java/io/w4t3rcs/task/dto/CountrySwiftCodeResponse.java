@@ -1,7 +1,7 @@
 package io.w4t3rcs.task.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.w4t3rcs.task.entity.Country;
 import io.w4t3rcs.task.entity.SwiftCode;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor @NoArgsConstructor
 public class CountrySwiftCodeResponse implements Serializable {
-    private String countryISO2;
+    @JsonProperty("countryISO2")
+    private String countryIso2;
     private String countryName;
     @JsonIncludeProperties({"address", "bankName", "countryISO2", "isHeadquarter", "swiftCode"})
     private List<SwiftCodeResponse> swiftCodes;
@@ -25,7 +26,7 @@ public class CountrySwiftCodeResponse implements Serializable {
         List<SwiftCodeResponse> swiftCodeResponses = new ArrayList<>();
         SwiftCode firstSwiftCode = swiftCodes.get(0);
         Country country = firstSwiftCode.getCountry();
-        response.setCountryISO2(country.getIso2());
+        response.setCountryIso2(country.getIso2());
         response.setCountryName(country.getName());
         swiftCodeResponses.add(SwiftCodeResponse.fromSwiftCode(firstSwiftCode));
         for (int i = 1; i < swiftCodes.size(); i++) {

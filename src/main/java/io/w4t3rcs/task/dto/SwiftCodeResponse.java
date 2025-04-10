@@ -1,6 +1,9 @@
 package io.w4t3rcs.task.dto;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.w4t3rcs.task.entity.Country;
 import io.w4t3rcs.task.entity.SwiftCode;
 import lombok.AllArgsConstructor;
@@ -14,15 +17,17 @@ import java.util.List;
 @Data
 @Builder
 @AllArgsConstructor @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({"address", "bankName", "countryISO2", "countryName", "isHeadquarter", "swiftCode", "branches"})
 public class SwiftCodeResponse implements Serializable {
-    private String address;
-    private String bankName;
-    private String countryISO2;
-    private String countryName;
-    private boolean isHeadquarter;
     @JsonProperty("swiftCode")
     private String code;
+    private String bankName;
+    private String address;
+    @JsonProperty("countryISO2")
+    private String countryIso2;
+    private String countryName;
+    private boolean isHeadquarter;
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     @JsonIncludeProperties({"address", "bankName", "countryISO2", "isHeadquarter", "swiftCode"})
     private List<SwiftCodeResponse> branches;
 
@@ -36,7 +41,7 @@ public class SwiftCodeResponse implements Serializable {
                 .code(swiftCode.getCode())
                 .bankName(swiftCode.getBankName())
                 .address(swiftCode.getAddress())
-                .countryISO2(country.getISO2())
+                .countryIso2(country.getIso2())
                 .countryName(country.getName())
                 .isHeadquarter(swiftCode.isHeadquarter())
                 .branches(branches)

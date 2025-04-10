@@ -26,7 +26,6 @@ public class SwiftCode implements Persistable<String>, Serializable {
     private String code;
     @NotBlank
     private String bankName;
-    @NotBlank
     private String address;
     @NotNull
     @Embedded
@@ -40,7 +39,7 @@ public class SwiftCode implements Persistable<String>, Serializable {
     @JoinTable(
             name = "headquarters_branches",
             joinColumns = @JoinColumn(name = "headquarter_code"),
-            inverseJoinColumns = @JoinColumn(name = "branch_id")
+            inverseJoinColumns = @JoinColumn(name = "branch_code")
     )
     private List<SwiftCode> branches;
 
