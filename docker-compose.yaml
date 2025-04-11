@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: 'postgres:latest'
+    image: 'postgres:15'
     container_name: remitly-postgres
     environment:
       POSTGRES_DB: ${DB_NAME}
@@ -11,7 +11,7 @@ services:
     networks:
       - backend
   redis:
-    image: 'redis:latest'
+    image: 'redis:7.2.5'
     container_name: remitly-redis
     command: redis-server --save 20 1 --loglevel warning
     ports:

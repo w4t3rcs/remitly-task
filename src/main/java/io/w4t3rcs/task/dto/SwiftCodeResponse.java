@@ -26,6 +26,7 @@ public class SwiftCodeResponse implements Serializable {
     @JsonProperty("countryISO2")
     private String countryIso2;
     private String countryName;
+    @JsonProperty("isHeadquarter")
     private boolean isHeadquarter;
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     @JsonIncludeProperties({"address", "bankName", "countryISO2", "isHeadquarter", "swiftCode"})

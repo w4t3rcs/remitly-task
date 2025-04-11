@@ -29,7 +29,6 @@ public class BatchConfig {
                 .resource(new ClassPathResource("csv/data.csv"))
                 .delimited()
                 .delimiter(",")
-                //COUNTRY ISO2 CODE,SWIFT CODE,CODE TYPE,NAME,ADDRESS,TOWN NAME,COUNTRY NAME,TIME ZONE
                 .names("countryISO2", "code", "type", "bankName", "address", "townName", "countryName", "timeZone")
                 .fieldSetMapper(mapper)
                 .build();

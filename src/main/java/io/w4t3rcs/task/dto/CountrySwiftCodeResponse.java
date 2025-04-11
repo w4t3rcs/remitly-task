@@ -2,6 +2,7 @@ package io.w4t3rcs.task.dto;
 
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.w4t3rcs.task.entity.Country;
 import io.w4t3rcs.task.entity.SwiftCode;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor @NoArgsConstructor
+@JsonPropertyOrder({"countryISO2", "countryName", "swiftCodes"})
 public class CountrySwiftCodeResponse implements Serializable {
     @JsonProperty("countryISO2")
     private String countryIso2;
