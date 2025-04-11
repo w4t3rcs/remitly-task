@@ -11,7 +11,7 @@ services:
     networks:
       - backend
   redis:
-    image: 'redis:7.2.5'
+    image: 'redis:7.4.2'
     container_name: remitly-redis
     command: redis-server --save 20 1 --loglevel warning
     ports:
@@ -20,22 +20,22 @@ services:
       - cache:/data
     networks:
       - backend
-#  app:
-#    container_name: remitly-task-app
-#    build:
-#      context: .
-#    depends_on:
-#      - db
-#      - redis
-#    environment:
-#      SPRING_DATASOURCE_URL: ${DB_URL}/${DB_NAME}
-#      SPRING_DATASOURCE_USERNAME: ${DB_USER}
-#      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
-#      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-#    ports:
-#      - '8080:8080'
-#    networks:
-#      - backend
+  app:
+    container_name: remitly-task-app
+    build:
+      context: .
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      SPRING_DATASOURCE_URL: ${DB_URL}/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_DATA_REDIS_URL: ${REDIS_URL}
+    ports:
+      - '8080:8080'
+    networks:
+      - backend
 
 volumes:
   cache:

@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:no-batch}
+  batch:
+    job:
+      enabled: ${BATCH_ENABLED}

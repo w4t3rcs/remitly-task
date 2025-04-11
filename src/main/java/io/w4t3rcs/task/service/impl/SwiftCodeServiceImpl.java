@@ -49,7 +49,6 @@ public class SwiftCodeServiceImpl implements SwiftCodeService {
 
     @Override
     @Transactional
-    @Caching(cacheable = @Cacheable(value = "swiftCodesCache", key = "#request.code"))
     public MessageSwiftCodeResponse createSwiftCode(SwiftCodeRequest request) {
         SwiftCode swiftCode = request.toSwiftCode();
         String code = swiftCode.getCode();
@@ -86,6 +85,7 @@ public class SwiftCodeServiceImpl implements SwiftCodeService {
     @Transactional
     @Caching(evict = @CacheEvict(value = "swiftCodesCache", key = "#code"))
     public MessageSwiftCodeResponse deleteSwiftCode(String code) {
+        swiftCodeRepository.deleteById(code);
         return new MessageSwiftCodeResponse("Swift code is successfully deleted - " + code);
     }
 }
