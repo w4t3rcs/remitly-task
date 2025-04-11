@@ -70,7 +70,7 @@ The application also comes with a set of tests leveraging Spring Boot Test, Test
 
 ## Running Tests
 
-1. **Build the project** with tests (you don't need to follow the previous instructions to test the app, all tests are integrated):
+1. **Build the project** with tests (you don't need to follow the previous instructions to test the app, but Docker must be running):
    ```bash
    ./mvnw clean test
    ```
