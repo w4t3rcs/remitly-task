@@ -36,6 +36,7 @@ The application also comes with a set of tests leveraging Spring Boot Test, Test
 
 - **Docker** installed and running
 - **Docker Compose** installed
+- **Git** installed
 
 ### Running the Application
 
@@ -57,7 +58,7 @@ The application also comes with a set of tests leveraging Spring Boot Test, Test
 3. **Verify if the application works**:
    - Check container logs if needed:
    ```bash
-   docker-compose logs -f remitly-task-app
+   docker-compose logs -f app
    ```
 
 4. **Stop the containers** when done:
