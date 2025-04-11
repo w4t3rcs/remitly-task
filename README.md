@@ -41,7 +41,7 @@ The application also comes with a set of tests leveraging Spring Boot Test, Test
 
 1. **Clone the repository** (or download the project):
    ```bash
-   git clone https://github.com/your-user/remitly-task.git
+   git clone https://github.com/w4t3rcs/remitly-task.git
    cd remitly-task
    ```
 
