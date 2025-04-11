@@ -132,17 +132,14 @@ remitly-task
 │       │   └── io
 |       |       └── w4t3rcs
 │       │           └── task
-│       │               ├── SwiftCodeCsvDataControllerTests.java
-│       │               └── SwiftCodeTestDataControllerTests.java
+│       │               └── SwiftCodeControllerTests.java
 │       └── resources
-│           ├── application.yaml
-│           ├── application-batch.yaml
-│           └── application-no-batch.yaml
+│           └── application.yaml
 ├── .env
 ├── docker-compose.yaml
 ├── Dockerfile
 ├── pom.xml
-└── README.md                // You are here!
+└── README.md                // You are here :)
 ```
 
 ---
