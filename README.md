@@ -72,8 +72,7 @@ The application also comes with a set of tests leveraging Spring Boot Test, Test
 
 1. **Build the project** with tests (you don't need to follow the previous instructions to test the app, all tests are integrated):
    ```bash
-   ./mvnw clean package
-   ./mvnw test
+   ./mvnw clean test
    ```
    This will run:
     - Integration tests (backed by Testcontainers for PostgreSQL & Redis)
