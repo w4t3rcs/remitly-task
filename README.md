@@ -61,7 +61,7 @@ The application also comes with a set of tests leveraging Spring Boot Test, Test
    docker-compose logs -f app
    ```
 
-4. **Stop the containers** when done:
+4. If you want to stop the application:
    ```bash
    docker-compose down
    ```
@@ -70,13 +70,9 @@ The application also comes with a set of tests leveraging Spring Boot Test, Test
 
 ## Running Tests
 
-1. **Build the project** with tests:
+1. **Build the project** with tests (you don't need to follow the previous instructions to test the app, all tests are integrated):
    ```bash
    ./mvnw clean package
-   ```
-
-2. **Run only tests**:
-   ```bash
    ./mvnw test
    ```
    This will run:
