@@ -75,7 +75,7 @@ The application also comes with a set of tests leveraging Spring Boot Test, Test
    ./mvnw clean test
    ```
    This will run:
-    - Integration tests (backed by Testcontainers for PostgreSQL & Redis)
+    - Unit and integrated tests (backed by Testcontainers for PostgreSQL & Redis)
     - Rest Assured tests for API endpoints
 
 > *Note:* You do **not** need to have local Postgres or Redis running. Testcontainers will automatically spin up ephemeral containers for tests.
