@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.w4t3rcs.task.entity.Country;
 import io.w4t3rcs.task.entity.SwiftCode;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +16,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+@Schema(description = "Response body for \"/v1/swift-codes/{code}\" (GET) endpoint")
 @Data
 @Builder
 @AllArgsConstructor @NoArgsConstructor
@@ -32,7 +35,7 @@ public class SwiftCodeResponse implements Serializable {
     @JsonIncludeProperties({"address", "bankName", "countryISO2", "isHeadquarter", "swiftCode"})
     private List<SwiftCodeResponse> branches;
 
-    public static SwiftCodeResponse fromSwiftCode(SwiftCode swiftCode) {
+    public static SwiftCodeResponse fromSwiftCode(@Valid SwiftCode swiftCode) {
         Country country = swiftCode.getCountry();
         List<SwiftCodeResponse> branches = swiftCode.getBranches() != null ? swiftCode.getBranches()
                 .stream()

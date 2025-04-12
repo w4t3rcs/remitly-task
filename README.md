@@ -113,6 +113,7 @@ remitly-task
 │   │   │               ├── event
 │   │   │               │   └── ApplicationReadyEventListener.java
 │   │   │               ├── exception
+│   │   │               │   ├── RestExceptionHandler.java
 │   │   │               │   └── NotFoundException.java
 │   │   │               ├── service
 │   │   │               │   ├── SwiftCodeService.java
@@ -155,7 +156,7 @@ Below is a high-level overview of some key endpoints. All endpoints are prefixed
 | **POST**    | `/v1/swift-codes`                       | Creates and saves to the database new SWIFT code        |
 | **DELETE**  | `/v1/swift-codes/{code}`                | Removes SWIFT code from the database.                   |
 
-> *Note:* If you need more info about the endpoints, check out the OpenAPI documentation at [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html).
+> *Note:* If you need more info about the endpoints, check out the OpenAPI documentation at [http://localhost:8080/v1/docs](http://localhost:8080/v1/docs).
 
 ---
 

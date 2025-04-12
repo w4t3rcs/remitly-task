@@ -3,6 +3,7 @@ package io.w4t3rcs.task.dto;
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.w4t3rcs.task.entity.Country;
 import io.w4t3rcs.task.entity.SwiftCode;
 import lombok.AllArgsConstructor;
@@ -13,6 +14,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Schema(description = "Response body for \"/v1/swift-codes/country/{iso2}\" (GET) endpoint")
 @Data
 @AllArgsConstructor @NoArgsConstructor
 @JsonPropertyOrder({"countryISO2", "countryName", "swiftCodes"})
